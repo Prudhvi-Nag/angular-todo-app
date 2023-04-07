@@ -1,0 +1,93 @@
+
+
+
+
+
+<div class="main">
+    <div class="form">
+
+       
+           <div class="myform">
+            <label for="inputname" >NAME</label><br>
+            <input id="inputname" type="text" placeholder="enter ur name" [(ngModel)]="user.name"/><br>
+            <label for="profession" >Profession</label><br>
+            <input id="profession" type="text" placeholder="enter ur name" [(ngModel)]="user.profession"/><br>
+            <label for="address" >Address</label><br>
+            <input id="address" type="text" placeholder="enter ur address" [(ngModel)]="user.address"/><br>
+            <label for="city" >City</label><br>
+            <input id="city" type="text" placeholder="enter ur city" [(ngModel)]="user.city"/><br>
+            <label for="phonenumber" >Phone Number</label><br>
+            <input id="phonenumber" type="number" placeholder="enter ur name" [(ngModel)]="user.phonenumber"/><br>
+            <label for="email" >Email</label><br>
+            <input id="email" type="text" placeholder="enter ur name" [(ngModel)]="user.email"/><br>
+            <label for="company" >company</label><br>
+            <input id="company" type="text" placeholder="enter ur name" [(ngModel)]="user.company"/><br>
+            <label for="companymail" >CompanyMail</label><br>
+            <input id="companymail" type="text" placeholder="enter ur name" [(ngModel)]="user.companymail"/><br>
+           </div>
+           
+    </div>
+    
+        <div class="card"  id="card">
+            <div>
+              <mat-card >
+                <div class="tri">
+                    <div class="tri-1"></div>
+                    <div class="tri-2"></div>
+                </div>
+
+                
+                    <div class="idcard">
+                    
+                    <div class="">
+                        <div class="cmplogo">
+                            <img class="logo" src="https://www.trustedbusiness.reviews/user_images/1660647084.png" />
+                        </div>
+                        <div class="username">
+                            <h2><b>{{ user.name | uppercase }}</b></h2>
+                        </div>
+                        <div class="username">
+                            <p>{{ user.profession }}</p>
+                        </div>
+                       <div class="username">
+                        <p>{{user.phonenumber}}</p>
+                       </div>
+                        <div class="username">
+                            <p>{{user.email}}</p>
+                        </div>
+                        <div class="username">
+                            <p>{{user.city}}</p>
+                        </div>
+
+                        
+    
+                    </div>
+                    <div class="cmpmail">
+                        <p>{{user.companymail}}</p>
+                    </div>
+                    </div>
+             
+               
+              </mat-card>
+
+              <div class="myBtn">
+                <!-- <button class="btn" (click)="openPDF()" >Download as Image</button> -->
+                <button class="btn" (click)="captureCardAsImage()"  >Download as Image</button>
+                <!-- <button (click)="downloadAsImage()">Download as PNG</button> -->
+                
+              </div>
+<!-- 
+              <button onclick="print()">Print</button> -->
+              <!-- <button styleSheetFile="assets/css/style.css" ngxPrint printSelectedId="card12" >Print</button> -->
+              <!-- <button (click)=downloadAsImage()>Download as Image</button> -->
+              <!-- <button onclick="card.download()">Download Card</button> -->
+              
+            </div>
+
+            
+
+ 
+
+</div>
+
+    

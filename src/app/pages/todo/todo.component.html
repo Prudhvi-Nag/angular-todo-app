@@ -1,0 +1,51 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="mytodo">
+    <div fxFlex="80">
+        <form [formGroup]="todoForm" (ngSubmit)="submit()">
+            <mat-form-field class="example-full-width" fxFlexFill>
+                <mat-label>Title</mat-label>
+                <input type="text" matInput placeholder="Enter Title" formControlName="title" />
+                <mat-error *ngIf="todoForm.get('title')?.errors?.['required']">
+                    title is required
+                  </mat-error>
+                  <mat-error *ngIf="todoForm.get('title')?.errors?.['minlength']">
+                    min 3 chars is required
+                  </mat-error>
+                  <mat-error *ngIf="todoForm.get('title')?.errors?.['maxlength']">
+                    max 16 chars is required
+                  </mat-error>
+            </mat-form-field>
+
+            <mat-radio-group aria-label="Select an option" formControlName="completed">
+                <mat-radio-button value="Complete" checked>Done</mat-radio-button>
+                <mat-radio-button value="Incomplete">In complete</mat-radio-button>
+                <!-- <mat-error *ngIf="todoForm.get('completed')?.errors?.['required']">
+                    Radio button is required
+                  </mat-error> -->
+            </mat-radio-group>
+
+            <mat-form-field appearance="fill" class="example-full-width" fxFlexFill>
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker"  formControlName="target"/>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="todoForm.get('target')?.errors?.['required']">
+                    date is required
+                  </mat-error>
+            </mat-form-field>
+
+            <!-- <mat-form-field appearance="fill" class="example-full-width" fxFlexFill>
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="myDatepicker" [(ngModel)]="myDate">
+                <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+                <mat-datepicker #myDatepicker></mat-datepicker>
+                <mat-error *ngIf="todoForm.get('target')?.errors?.['required']">
+                    date is required
+                  </mat-error>
+              </mat-form-field> -->
+
+            <div fxLayout="row" fxLayoutAlign="center" fxFlexFill>
+                <button mat-raised-button color="primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

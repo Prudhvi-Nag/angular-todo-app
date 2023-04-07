@@ -1,0 +1,14 @@
+@mixin forInput-Label{
+    font-size: 20px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-left: 20px;
+}
+@mixin d-center{
+    display: flex;
+    justify-content: center;
+}
+@mixin contect-position{
+                 content: "";
+                position: absolute;
+}
